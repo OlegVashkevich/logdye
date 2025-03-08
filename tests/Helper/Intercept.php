@@ -11,8 +11,12 @@ class Intercept extends php_user_filter
     public function filter($in, $out, &$consumed, $closing): int
     {
         while ($bucket = stream_bucket_make_writeable($in)) {
-            self::$cache .= $bucket->data;
-            $consumed += $bucket->datalen;
+            /** @var string $string */
+            $string = $bucket->data;
+            self::$cache .= $string;
+            /** @var int $int */
+            $int = $bucket->datalen;
+            $consumed += $int;
             stream_bucket_append($out, $bucket);
         }
         return PSFS_PASS_ON;
