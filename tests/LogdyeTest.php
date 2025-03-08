@@ -36,21 +36,21 @@ class LogdyeTest extends TestCase
         $handler = new StreamHandler("php://stdout", Level::Debug);
         $handler->setFormatter($formatter);
         $logger->pushHandler($handler);
-        $logger->Debug("just activate");
+        $logger->debug("just activate");
         //start stream
         $stderr = $handler->getStream();
         if (is_resource($stderr)) {
             stream_filter_append($stderr, "intercept");
         }
 
-        $logger->Debug('test');
-        $logger->Info('test');
-        $logger->Notice('test');
-        $logger->Warning('test');
-        $logger->Error('test');
-        $logger->Critical('test');
-        $logger->Alert('test');
-        $logger->Emergency('test');
+        $logger->debug('test');
+        $logger->info('test');
+        $logger->notice('test');
+        $logger->warning('test');
+        $logger->error('test');
+        $logger->critical('test');
+        $logger->alert('test');
+        $logger->emergency('test');
         //end stream
         $this->assertSame(Intercept::$cache, implode('', $states));
     }
@@ -68,15 +68,15 @@ class LogdyeTest extends TestCase
         $handler = new StreamHandler("php://stdout", Level::Debug);
         $handler->setFormatter($formatter);
         $logger->pushHandler($handler);
-        $logger->Debug('');
-        $logger->Debug('test', [$data]);
-        $logger->Info('test');
-        $logger->Notice('test');
-        $logger->Warning('test');
-        $logger->Error('test');
-        $logger->Critical('test');
-        $logger->Alert('test');
-        $logger->Emergency('test');
+
+        $logger->debug('test', [$data]);
+        $logger->info('test');
+        $logger->notice('test');
+        $logger->warning('test');
+        $logger->error('test');
+        $logger->critical('test');
+        $logger->alert('test');
+        $logger->emergency('test');
 
         $this->expectNotToPerformAssertions();
     }

@@ -33,15 +33,14 @@ $handler = new StreamHandler("php://stdout", Level::Debug);
 $handler->setFormatter($formatter);
 $logger->pushHandler($handler);
 
-$logger->Debug('');
-$logger->Debug('test');
-$logger->Info('test');
-$logger->Notice('test');
-$logger->Warning('test');
-$logger->Error('test');
-$logger->Critical('test');
-$logger->Alert('test');
-$logger->Emergency('test');
+$logger->debug('test');
+$logger->info('test');
+$logger->notice('test');
+$logger->warning('test');
+$logger->error('test');
+$logger->critical('test');
+$logger->alert('test');
+$logger->emergency('test');
 ```
 You will see:
 
