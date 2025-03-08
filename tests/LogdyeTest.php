@@ -79,6 +79,5 @@ class LogdyeTest extends TestCase
         $logger->emergency('test');
 
         $this->expectNotToPerformAssertions();
-        //check workflow
     }
 }
