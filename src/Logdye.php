@@ -52,6 +52,12 @@ class Logdye extends LineFormatter
         return str_replace('%color_end%', self::RESET, $formatted);
     }
 
+    /**
+     * Colors for log level
+     *
+     * @param  int  $level
+     * @return string
+     */
     private function getColor(int $level): string
     {
         $ColorScheme = [
