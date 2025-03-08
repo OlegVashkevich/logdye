@@ -30,6 +30,6 @@
   },
   "require": {
     "php": "^8.2",
-    "monolog/monolog": "*"
+    "monolog/monolog": "^3"
   }
 }
