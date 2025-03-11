@@ -12,15 +12,14 @@ Colored Line Formatter for Monolog
 composer requier olegv/logdye
 ```
 
+## Usage
 ```php
 <?php
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;
 use OlegV\Logdye;
-```
-## Usage
-```php
+
 //logger
 $logger = new Logger('Name');
 
