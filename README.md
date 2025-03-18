@@ -9,7 +9,7 @@ Colored Line Formatter for Monolog
 
 ## Install
 ```shell
-composer requier olegv/logdye
+composer require olegv/logdye
 ```
 
 ## Usage
